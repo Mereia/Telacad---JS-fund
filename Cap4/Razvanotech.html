@@ -1,0 +1,86 @@
+<!-- Header-ul site-ului-->
+<header>
+    <!-- Titlul blogului -->
+    <h1>Razvanotech</h1>
+    <!-- Cum adaugam o imagine: valoarea atributului "src" este reprezentata de link-ul imaginii. Alt reprezinta valoarea afisata in cazul in care imaginea nu este disponibila. -->
+    <!-- In mod normal width si height se adauga din CSS -->
+    <img src="http://pngimg.com/uploads/car_wheel/car_wheel_PNG23302.png" alt="logo" width="200px" height="200px"><br>
+    <!-- Search-ul, cu placeholder-->
+    <input type="search" placeholder="Search blabla...">
+  </header>
+  
+  <!-- Meniu de navigatie -->
+  <nav>
+    <!-- Lista neordonata -->
+    <ul>
+      <!-- Element din lista -->
+      <!-- Cu tag-ul a introducem link catre o alta pagina. -->
+      <!-- Daca "a" are la href #..., inseamna ca trimite catre o parte a paginii curente, identificata de id-ul ce urmeaza dupa #. Altfel, trimite catre o pagina externa. -->
+      <li><a href="#html-css-section">HTML/CSS</a></li>
+      <li><a href="https://www.telacad.ro/cursuri/js1/?referral=razvan%20cirlugea">JavaScript</a></li>
+      <li><a href="https://www.telacad.ro/cursuri/javascript-advanced-react/?referral=razvan%20cirlugea">React</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Continutul principal -->
+  <main>
+    <h2>Bine ai venit!</h2>
+    <p class="welcome-p">Pe acest blog veti vedea toate informatiile informatiile de web development de care aveti nevoie.</p>
+    <!-- lorem + TAB => text lung -->
+    <p class="welcome-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi pariatur maxime itaque ab beatae reprehenderit minima quod accusamus eos placeat harum, sit voluptatum fugiat aut dolor modi quia libero ipsa, velit dolore. Exercitationem quam suscipit, repudiandae quaerat perspiciatis voluptatem libero aliquid cum excepturi tempore? Modi reiciendis recusandae incidunt autem quam?</p>
+    <h2>Vezi videoclipul saptamanii:</h2>
+    <!-- Pentru a include un video de pe YouTube, intrati pe videoclipul respectiv si la optiunea de trimite/share alegeti incorporeaza/embed. Codul generat e luat cu copy paste si pus in HTML-ul nostru. -->
+    <iframe width="530" height="315" src="https://www.youtube.com/embed/ciNHn38EyRc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- id-ul dat aici trebuie sa coincida cu cel dat la href-ul tag-ului "a" din nav. -->
+    <div id="html-css-section">
+      <h2>HTML/CSS</h2>
+      <p>Aici vedeti ultimele feature-uri din HTML si CSS!</p>
+    </div>
+    <h2>Ajuta-ne cu un feedback:</h2>
+    <!-- Adaugam un formular. Metoda "get" este utilizata pentru a vedea la URL ce parametri sunt pasati la submiterea formularului. -->
+    <form method="get">
+      <label for="name">Nume: </label>
+      <!-- required = formularul nu poate fi submis fara a fi pusa o valoare in acel camp. -->
+      <input type="text" id="name" name="name" required>
+      <br>
+      <!-- type="email" => trebuie @. -->
+      <label for="email">Mail: </label>
+      <input type="email" id="email" name="email">
+      <br>
+      <!-- type="password" => nu se vad caracterele cand tastezi. -->
+      <label for="password">Password: </label>
+      <input type="password" id="password" name="password">
+      <br>
+      <p>Ce te intereseaza pe site-ul nostru?</p>
+      <!-- Ca sa putem alege optiuni multiple: type="checkbox". In momentul in care submitem formularul, se vor trimite catre server valorile atributelor "name", respectiv "value".-->
+      <label for="html-css-multiple">HTML/CSS</label>
+      <input type="checkbox" id="html-css-multiple" name="html-css" value="selected">
+      <br>
+      <label for="js-multiple">JS</label>
+      <!-- Daca nu specificam o valoare pentru "value", valoarea implicita este "on" -->
+      <input type="checkbox" id="js-multiple" name="js">
+      <br>
+      <label for="react-multiple">React</label>
+      <input type="checkbox" id="react-multiple" name="js">
+      <br>
+      <!-- Ca sa putem alege o singura optiune din 3, punem type="radio" si toate optiunile trebuie sa aiba acelasi nume. Pentru a stii care dintre optiuni este selectata, punem si o valoare pentru atributul "value". -->
+      <p>Care este topicul tau preferat?</p>
+      <label for="html-css">HTML/CSS</label>
+      <input type="radio" id="html-css" name="favorite" value="html-css">
+      <br>
+      <label for="js">JS</label>
+      <input type="radio" id="js" name="favorite" value="js">
+      <br>
+      <label for="react">React</label>
+      <input type="radio" id="react" name="favorite" value="react">
+      <br>
+      <!-- Neaparat input/buton de submit! Cand e apasat, se trimite formularul. -->
+      <input type="submit" value="Trimite feedback"><br>
+    </form>
+  </main>
+  
+  <!-- Footer-ul site-ului -->
+  <footer>
+    <!-- Caracterul special de copyright -->
+    <p>&copy;: Razvan Cirlugea</p>
+  </footer>
