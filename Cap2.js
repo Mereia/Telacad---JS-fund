@@ -1,3 +1,52 @@
+var phone = "Iphone 12 Pro Max";
+if (true) {
+  // Putem redeclara o variabila cu var (nu vrem asta in mod normal).
+  // Telefonul va fi modificat si in afara if-ului
+  var phone = "Nokia 3310";
+  console.log(phone);
+}
+console.log(phone);
+
+
+var phone = 'Iphone 12 Pro Max';
+// Intr-o functie (vom vedea mai multe desprea crearea unei functii cursul urmator)
+// daca declari o variabila cu var este vizibila DOAR in interiorul functiei.
+function dream() {
+  var phone = 'Nokia 3310';
+  console.log(phone);
+}
+dream ()
+console.log(phone);
+
+
+let color = 'galben';
+// REDECLARAREA (let color) va genera eroare.
+// let color = 'blue';
+// REASIGNAREA unei valori (modificarea acesteia) este posibila.
+color = 'bleu';
+console.log(color);
+
+// LET are BLOCK scope (vezi desenul cu scoping).
+if (true) {
+// Daca declari o variabila cu let in interiorul unui bloc (if, for)
+// va fi vizibila doar in interiorul blocului.
+  let color = 'rosu';
+  console.log(color);
+}
+console.log(color);
+
+
+const director = 'F.F. Coppola';
+// REASIGNAREA VA DA EROARE, valoarea variabilei nu mai poate fi modificata
+// director = 'S. Spielberg';
+
+// CONST are, asemenea lui LET, BLOCK scope
+if (true) {
+  const director = 'S. Spielberg';
+  console.log(director);
+}
+console.log(director);
+
 // IF 
 // EX: Daca ai luat nota mai mare de 9, afisam la consola "Nota mare!".
 // Daca ai luat nota mai mare de 8, afisam "Nota buna!".
