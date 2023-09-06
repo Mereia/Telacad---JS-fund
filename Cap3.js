@@ -312,6 +312,30 @@ function mesaj(product) {
 // numit "category". Daca pretul obiectului este >= 50 de lei, valoarea
 // lui "category" va fi "expensive", altfel va fi "cheap".
 
+const product1 = {
+  nume: 'ruj fenty',
+  pret: 10,
+  moneda: 'ron'
+}
+
+function extendObject(product1, newKey, newValue) {
+  // Create a new object by cloning the original object
+  const extendedObject = { ...product1 };
+
+  // Add the new key-value pair to the extended object
+  if (newValue >= 100) {
+    extendedObject[newKey] = 'scump';
+
+  } else {
+    extendedObject[newKey] = 'ieftin';
+  }
+
+  return extendedObject;
+}
+
+const product2 = extendObject(product1, 'category', 10);
+console.log(product2);
+
 // EX: extendObject(product) => 
 // {
 //    name: 'XD Design Backpack',
@@ -320,4 +344,4 @@ function mesaj(product) {
 //    category: 'cheap'
 // }
 
-// Creti si un alt produs si testati cu el!
+// Creati si un alt produs si testati cu el!

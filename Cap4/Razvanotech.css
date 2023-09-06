@@ -1,0 +1,169 @@
+/* Selectorul * se aplica pentru orice tag. Ne dorim ca orice tag sa aiba box-sizing: border-box. */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	/* Unele browsere au margin si padding predefinit si ne-ar putea incurca. */
+	margin: 0;
+	padding: 0;
+	/* font luat de pe google fonts, nu uitati sa il includeti in head, cu tag-ul link! */
+	font-family: 'Roboto', sans-serif;
+	/* Daca vrem imagine de fundal, cu metoda url dam link-ul catre imaginea respectiva. */
+	background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+	/* Cover inseamna ca imaginea va ocupa fundalul intregului element.*/
+	background-size: cover;
+}
+
+/* HEADER-UL*/
+header {
+	/* display: flex pentru a aranja elemente intr-un container. */
+	display: flex;
+	/* Elementele sunt asezate pe orizontala, iar daca e prea putin spatiu NU trec pe randul urmator.*/
+	flex-flow: row nowrap;
+	/* Pe orizontala punem un element in stanga si altul in drepata. */
+	justify-content: space-between;
+	/* Centram elementele pe verticala. */
+	align-items: center;
+	background-color: white;
+}
+
+/* Grupam text-ul si imaginea intr-un div, pentru ca header sa aiba doar 2 copii. Div-ul va avea si el propria lui stilizare. */
+header .logo {
+	display: flex;
+	align-items: center;
+	padding: 0.5em;
+}
+
+/* LOGO-UL */
+header h1 {
+	/* font Google Fonts */
+	font-family: 'Indie Flower', cursive;
+	/* Cu font-size specificam dimensiunea textului. */
+	/* rem si em sunt unitati relative si ajuta ca pagina sa fie responsive (sa se vada ok si pe mobil/tableta/etc.). In browser 1rem = 16px. */
+	font-size: 2rem;
+	margin: 0.5rem;
+}
+
+/* IMAGINEA DIN HEADER */
+header img {
+	/* By deafult imaginile sunt inline si nu beneficiaza de proprietatilor tag-urilor block. */
+	display: block;
+	/* transition spune in felul urmator: pentru proprietatile elementului selectat(img-ul) care se MODIFICA,
+	fa modificarea respectiva in 2 secunde; */
+	transition: all 2s;
+	/* cu width si height setam latimea, respectiv inaltimea*/
+	width: 100px;
+	height: 100px;
+}
+
+/* la hover(tinerea mouse-ului deasupra elementului) se MODIFICA imgainea;
+se va roti cu 360 de grade, in 2secunde, din causa transitionului de mai sus!! */
+header img:hover {
+	transform: rotate(360deg);
+}
+
+/* SEARCH BAR-ul */
+header input {
+	/* By deafult imaginile sunt inline si nu beneficiaza de proprietatilor tag-urilor block. */
+	display: block;
+	font-size: 1rem;
+	/* Borderul e compus din 3 proprietati: tipul, grosimea si culoarea.*/
+	border: solid 2px black;
+	/* Cu border radius rotunjesti colturile. */
+	border-radius: 10px;
+	color: blue;
+	padding: 0.5rem;
+}
+
+/* Daca vrem sa stilizam doar placeholderul, folosim selectorul ::placeholder. */
+header input::placeholder {
+	color: pink;
+}
+
+/* Media queries-urile sunt folosite pentru ca site-ul nostru sa arate ok si pe mobil/tableta/alte device-uri. */
+/* max-device-width este pentru mobil/tableta */
+@media screen and (max-device-width: 480px) {
+	/* ATENTIE! Media queries-urile se pun DUPA ce am definit proprietatile principale de CSS. Ele suprascriu proprietatile de dinainte, pentru device-ul corespunzator. */
+	header h1 {
+    /* diplay: none ascunde elementul de pe ecran. */
+		display: none;
+	}
+}
+/* max-width este pentru browser */
+@media screen and (max-width: 480px) {
+	header h1 {
+		display: none;
+	}
+}
+
+/* NAVBAR-UL*/
+nav ul {
+	/* Pentru a scapa de bulinele din lista */
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 0;
+	display: row nowrap;
+	/* space-around adauga spatiere intre elemente. */
+	justify-content: space-around;
+}
+
+nav li {
+	font-size: 1.6rem;
+	padding: 1em;
+	background-color: blue;
+	/* Ca toate elementele sa ocupe o dimensiune egala, le dam acelasi flex-grow. */
+	flex: 1;
+	text-align: center;
+}
+
+nav a {
+	/* Pentru a nu mai fi link-urile subliniate */
+	text-decoration: none;
+	/* ATENTIE! cand avem link-uri trebuie sa le schimbam direct lor culoarea! Daca schimbam culoarea tag-ului li care contine un link, nu merge! */
+	color: white;
+	/* Marim spatiul de click. */
+	padding: 1rem;
+}
+
+nav li:hover {
+	background-color: grey;
+}
+
+/* MAIN */
+main {
+  /* Putem da si valori procentuale. */
+	margin: 0 10%;
+	padding: 1rem;
+	background-color: white;
+}
+
+/* Eliminam width si height din html si le punem in CSS. */
+main iframe {
+	/* Ne asiguram ca iframe-ul nu depaseste intreaga latime a sectiunii. */
+	max-width: 100%;
+	width: 530px;
+	height: 310px;
+}
+
+main form {
+	display: flex;
+	flex-direction: column;
+}
+
+main input {
+	/* Dimensiunea maxima va fi de 10 rem. */
+	max-width: 10rem;
+}
+
+footer {
+	background-color: #c4c4c4;
+}
+
+footer p {
+	margin: 0;
+	padding: 1rem;
+	text-align: center;
+}
