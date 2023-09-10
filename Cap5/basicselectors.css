@@ -1,0 +1,27 @@
+/* Cascading Style Sheets => regulile se aplica in cascada. Pentru prioritate (specificitate) egala, doar ultima regula este aplicata.*/
+h2 {
+    color: purple;
+  }
+  
+  h2 {
+    color: blue;
+  }
+  
+  /* Selectam tag-urile dupa numele lor. */
+  p {
+    color: pink;
+  }
+  /* Selectam UN TAG dupa id. */
+  #main-p {
+    color: red;
+  }
+  /* Selectam tag-urile dupa clasa. */
+  .green {
+    color: green;
+  }
+  /* De remarcat ca, in ciuda faptului ca paragraful 3 este selectat printr-o clasa DUPA ce este selectat printr-un id, selectia prin id are prioritate. ID > CLASA > TAG.*/
+  
+  /* Pseudo-clasa - hover. Proprietatile se aplica doar cand mouse-ul este deasupra elementului. */
+  h2:hover {
+    color: green;
+  }

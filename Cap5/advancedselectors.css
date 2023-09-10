@@ -1,0 +1,14 @@
+/* Selectam doar paragrafele DIN INTERIORUL tag-ului cu id-ul main-section. */
+#main-section p {
+    font-size: 18px;
+  }
+  
+  /* Aplicam acelasi stiluri atat pe p-uri, cat si pe h2-uri. */
+  p, h2 {
+    color: green
+  }
+  
+  /* !important bate si id si inline styling, bate tot. NU IL FOLOSITI! Sunt foarte rare cazurile in care chiar nu aveti alta varianta. */
+  a {
+    color: purple !important;
+  }
