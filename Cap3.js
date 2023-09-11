@@ -283,7 +283,14 @@ power(5, 3);
 
 // CHALLENGE: Incercati sa nu folositi o functie predefinita, sau un operator
 // care deja face asta. Folositi structuri repetitive.
-
+function powerTwo(base, exponent) {
+  let resultPower = 1;
+  for(let i = 0; i < exponent; i++) {
+    resultPower *= base;
+  }
+  return resultPower;
+}
+console.log(powerTwo(2, 5)); // output: 32
 
 // Se da urmatorul obiect:
 const product = {
